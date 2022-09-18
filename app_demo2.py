@@ -6,7 +6,7 @@ import numpy as np
 from dash.dependencies import Output, Input
 from scipy.interpolate import interp1d
 
-data = pd.read_csv("uranus-temp.csv")
+data = pd.read_csv("data/uranus-temp.csv")
 data["Date"] = pd.to_datetime(data["Date"], format="%m/%d/%Y")
 #data.sort_values("Date", inplace=True)
 
@@ -135,7 +135,7 @@ app.layout = html.Div(
 )
 
 def update_charts(launcher, path, start_date, end_date):
-	XY = np.loadtxt(f"{launcher}.csv", delimiter=',')
+	XY = np.loadtxt(f"data/{launcher}.csv", delimiter=',')
 	f = interp1d(XY[:, 0], XY[:, 1], kind='linear', fill_value=0, bounds_error=False)
 
 

@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from dash.dependencies import Output, Input
 
-data = pd.read_csv("uranus-temp.csv")
+data = pd.read_csv("data/uranus-temp.csv")
 data["Date"] = pd.to_datetime(data["Date"], format="%m/%d/%Y")
 #data.sort_values("Date", inplace=True)
 
